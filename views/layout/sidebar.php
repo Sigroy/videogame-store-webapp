@@ -3,14 +3,30 @@
     <aside class="flex flex-col px-10 border-r">
         <h2 class="mt-6 text-center text-2xl font-bold text-gray-900">Iniciar sesión</h2>
         <form action="#" method="post" class="flex flex-col justify-center text-center mt-5">
+            <input type="hidden" name="remember" value="true">
             <label for="email">Correo:</label>
             <input type="email" id="email" name="email" required
-                   class="appearance-none rounded-none relative block w-full px-3 border border-gray-300 placeholder-gray-500 text-gray-900 mb-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+                   class="rounded-md appearance-none rounded-none relative block w-full px-3 border border-gray-300 placeholder-gray-500 text-gray-900 mb-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
             <label for="password">Contraseña:</label>
             <input type="password" id="password" name="password" required
-                   class="appearance-none rounded-none relative block w-full px-3 border border-gray-300 placeholder-gray-500 text-gray-900 mb-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
-            <input type="submit" value="Entrar"
-                   class="border bg-blue-900 text-white rounded-md w-24 self-center cursor-pointer hover:bg-blue-800">
+                   class="rounded-md appearance-none rounded-none relative block w-full px-3 border border-gray-300 placeholder-gray-500 text-gray-900 mb-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+            <button type="submit"
+                    class="border relative bg-indigo-600 py-2 hover:bg-indigo-700 text-white rounded-md w-full self-center cursor-pointer hover:bg-blue-800">
+                <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+            <!-- Heroicon name: solid/lock-closed -->
+            <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd"
+                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                    clip-rule="evenodd"/>
+            </svg>
+          </span>
+                Entrar
+            </button>
+            <div class="text-sm mt-2">
+                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> ¿Olvidaste tu
+                    contraseña? </a>
+            </div>
         </form>
         <ul class="mt-5">
             <li>
