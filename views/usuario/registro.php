@@ -11,7 +11,7 @@
                 Por favor, introduce tus datos
             </p>
         </div>
-        <form class="mt-8 space-y-6" action="<?= BASE_URL ?>usuario/guardar" method="POST">
+        <form class="mt-8 space-y-6" action="<?= BASE_URL ?>/usuario/guardar" method="POST">
             <div class="rounded-md shadow-sm -space-y-px">
                 <div>
                     <label for="nombre" class="sr-only">Nombre</label>
