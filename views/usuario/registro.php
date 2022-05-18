@@ -1,11 +1,12 @@
 <div class="min-h-full flex items-center justify-center py-12 px-4 bg-gray-50 sm:px-6 lg:px-8">
     <div class="max-w-md w-full space-y-8">
         <div>
-            <?php if (isset($_SESSION['registro']) && $_SESSION['registro']): ?>
+            <?php if (isset($_SESSION['registro']) && $_SESSION['registro'] == 'exitoso'): ?>
                 <p class="text-green-500 text-center mb-3">Registro completado correctamente</p>
-            <?php else: ?>
-                <p class="text-red-500 text-center">Registro fallido</p>
+            <?php elseif (isset($_SESSION['registro']) && $_SESSION['registro'] == 'fallido'): ?>
+                <p class="text-red-500 text-center">Registro fallido, introduce bien los campos.</p>
             <?php endif; ?>
+            <?php Utils::eliminarSesion('registro'); ?>
             <h2 class="text-center text-3xl font-extrabold text-gray-900">Registrate</h2>
             <p class="mt-2 text-center text-sm text-gray-600">
                 Por favor, introduce tus datos
