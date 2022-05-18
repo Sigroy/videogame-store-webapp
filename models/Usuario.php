@@ -1,6 +1,7 @@
 <?php
 
-class Usuario {
+class Usuario
+{
     private $id_usuario;
     private $nombre;
     private $apellidos;
@@ -10,7 +11,8 @@ class Usuario {
     private $imagen;
     private $db;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->db = Database::connect();
     }
 
@@ -83,7 +85,7 @@ class Usuario {
      */
     public function getPassword()
     {
-        return $this->password;
+        return password_hash($this->db->real_escape_string($this->password), PASSWORD_BCRYPT, ['cost' => 4]);
     }
 
     /**
@@ -91,7 +93,7 @@ class Usuario {
      */
     public function setPassword($password): void
     {
-        $this->password = password_hash($this->db->real_escape_string($password), PASSWORD_BCRYPT, ['cost' => 4]);
+        $this->password = $password;
     }
 
     /**
@@ -126,14 +128,36 @@ class Usuario {
         $this->imagen = $imagen;
     }
 
-    public function guardar() {
+    public function guardar()
+    {
         $sql = "INSERT INTO usuario VALUES(NULL, '{$this->getNombre()}', '{$this->getApellidos()}', '{$this->getEmail()}', '{$this->getPassword()}', 'user', null)";
         $registro = $this->db->query($sql);
 
         $resultado = false;
-        if($registro) {
+        if ($registro) {
             $resultado = true;
         }
         return $resultado;
     }
+
+    public function login()
+    {
+        $resultado = false;
+        $email = $this->email;
+        $password = $this->password;
+        $sql = "SELECT * FROM usuario WHERE email = '$email'";
+        $login = $this->db->query($sql);
+        if ($login && $login->num_rows === 1) {
+            $usuario = $login->fetch_object();
+
+            $verificacion = password_verify($password, $usuario->password);
+
+
+            if ($verificacion) {
+                $resultado = $usuario;
+            }
+        }
+        return $resultado;
+    }
+
 }
