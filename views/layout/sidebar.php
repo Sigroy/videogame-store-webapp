@@ -25,11 +25,14 @@
           </span>
                     Entrar
                 </button>
-                <div class="text-sm mt-2">
-                    <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> ¿Olvidaste tu
-                        contraseña? </a>
-                </div>
             </form>
+            <div class="text-sm mt-2 self-center">
+                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> ¿Olvidaste tu
+                    contraseña? </a>
+            </div>
+            <div class="text-sm mt-2 self-center">
+                <a href="<?=BASE_URL?>/usuario/registro" class="font-medium text-indigo-600 hover:text-indigo-300"> Crear una cuenta </a>
+            </div>
         <?php else: ?>
             <h2 class="text-center mt-5 font-bold inline-block text-2xl"><?= $_SESSION['identidad']->nombre ?> <?= $_SESSION['identidad']->apellidos ?></h2>
         <?php endif; ?>
@@ -41,7 +44,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
                     </svg>
-                    <a href="" class="text-blue-900 font-semibold hover:border-b hover:border-b-gray-700"><span>Gestionar
+                    <a href="<?=BASE_URL?>/categoria/index" class="text-blue-900 font-semibold hover:border-b hover:border-b-gray-700"><span>Gestionar
                     categorías</span></a>
                 </li>
                 <li>

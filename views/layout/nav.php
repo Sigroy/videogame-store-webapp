@@ -18,19 +18,12 @@
             <li>
                 <a href="#" class="border-b-2 border-gray-200">Inicio</a>
             </li>
-
+        <?php $categorias = Utils::mostrarCategorias();?>
+            <?php while($cat = $categorias->fetch_object()): ?>
             <li>
-                <a href="#">PlayStation 5</a>
+                <a href="#"><?=$cat->nombre?></a>
             </li>
-            <li>
-                <a href="#">Xbox One</a>
-            </li>
-            <li>
-                <a href="#">Nintendo Switch</a>
-            </li>
-            <li>
-                <a href="#">Nintendo 3DS</a>
-            </li>
+            <?php endwhile; ?>
         </ul>
     </div>
     <ul>
