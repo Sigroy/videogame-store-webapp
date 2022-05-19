@@ -8,7 +8,6 @@
 </head>
 <body class="h-screen">
 <!-- BARRA DE NAVEGACIÓN -->
-<?php $categorias = Utils::mostrarCategorias(); ?>
 <nav class="text-white bg-gray-800 flex h-14 mx-auto px-8 items-center justify-between">
     <div class="flex">
         <div class="mr-16">
