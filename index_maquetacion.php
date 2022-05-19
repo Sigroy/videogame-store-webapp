@@ -46,7 +46,7 @@
     </ul>
 </nav>
 
-<div class="grid grid-cols-5 h-[88%]">
+<div class="grid grid-cols-5 h-auto">
     <!-- BARRA LATERAL -->
     <aside class="flex flex-col px-10 border-r">
         <h2 class="mt-6 text-center text-2xl font-bold text-gray-900">Iniciar sesión</h2>

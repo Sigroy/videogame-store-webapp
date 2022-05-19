@@ -39,6 +39,4 @@ if (class_exists($nombre_controlador)) {
     mostrarError();
 }
 
-require_once 'views/layout/footer.php';
-
 ob_end_flush();
