@@ -21,6 +21,15 @@ class Utils
         }
     }
 
+    public static function isIdentity()
+    {
+        if (!isset($_SESSION['identidad'])) {
+            header("Location:" . BASE_URL);
+        } else {
+            return true;
+        }
+    }
+
     public static function mostrarCategorias()
     {
         require_once 'models/Categoria.php';
@@ -44,5 +53,21 @@ class Utils
         }
 
         return $estadisticas;
+    }
+
+    public static function mostrarEstado($estado)
+    {
+        $valor = 'Pendiente';
+        if ($estado == 'Confirmado') {
+            $valor = 'Pendiente';
+        } elseif ($estado == 'Prepracion') {
+            $valor = 'En prepración';
+        } elseif ($estado == 'Listo') {
+            $valor = 'Listo para enviar';
+        } elseif ($estado == 'Enviado') {
+            $valor = 'Enviado';
+        }
+
+        return $valor;
     }
 }

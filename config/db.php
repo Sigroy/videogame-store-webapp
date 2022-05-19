@@ -15,7 +15,11 @@ class Database
                 $active_group = 'default';
                 $query_builder = TRUE;
         // Connect to DB*/
-
+        $user = getenv('CLOUDSQL_USER');
+        $pass = getenv('CLOUDSQL_PASSWORD');
+        $inst = getenv('CLOUDSQL_DSN');
+        $db = getenv('CLOUDSQL_DB');
+//        $db = new mysqli(null, $user, $pass, $db, null, $inst);
         $db = new mysqli('localhost', 'sig', '1234', 'tienda_videojuegos');
         $db->query("SET NAMES 'utf8'");
         return $db;

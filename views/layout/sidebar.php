@@ -2,7 +2,7 @@
     <!-- BARRA LATERAL -->
     <aside class="flex flex-col px-10">
         <h2 class="mt-6 text-center text-2xl font-bold text-gray-900">Mi carrito</h2>
-        <ul>
+        <ul class="flex flex-col items-center">
             <?php $estadisticas = Utils::estadisticasCarrito() ?>
             <li><a href="<?= BASE_URL ?>/carrito/index">Productos (<?= $estadisticas['contador'] ?>)</a></li>
             <li><a href="<?= BASE_URL ?>/carrito/index">Total: $<?= $estadisticas['total'] ?></a></li>
@@ -77,7 +77,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
                     </svg>
-                    <a href=""
+                    <a href="<?= BASE_URL ?>/pedido/gestion"
                        class="text-blue-900 font-semibold hover:border-b hover:border-b-gray-700"><span>Gestionar
                     pedidos</span></a>
                 </li>
@@ -91,7 +91,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                     </svg>
-                    <a href="" class="text-blue-900 font-semibold hover:border-b hover:border-b-gray-700">
+                    <a href="<?= BASE_URL ?>/pedido/mis_pedidos"
+                       class="text-blue-900 font-semibold hover:border-b hover:border-b-gray-700">
                         <span>Mis pedidos</span></a>
                 </li>
                 <li>
