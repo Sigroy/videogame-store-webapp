@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="<?=BASE_URL?>/assets/css/styles.css" rel="stylesheet">
+    <link href="<?= BASE_URL ?>/assets/css/styles.css" rel="stylesheet">
     <title>Inicio</title>
 </head>
 <body class="h-screen">
 <!-- BARRA DE NAVEGACIÓN -->
+<?php $categorias = Utils::mostrarCategorias(); ?>
 <nav class="text-white bg-gray-800 flex h-14 mx-auto px-8 items-center justify-between">
     <div class="flex">
         <div class="mr-16">
             <!--        <img src="" alt="">-->
-            <span>Tienda de videojuegos</span>
+            <a href="<?= BASE_URL ?>">Tienda de videojuegos</a>
         </div>
         <ul class="flex gap-4">
             <li>
-                <a href="#" class="border-b-2 border-gray-200">Inicio</a>
+                <a href="<?= BASE_URL ?>"
+                   class="<?php if (!isset($_GET['id_categoria'])): ?>border-b-2 <?php endif; ?>border-gray-200">Inicio</a>
             </li>
-        <?php $categorias = Utils::mostrarCategorias();?>
-            <?php while($cat = $categorias->fetch_object()): ?>
-            <li>
-                <a href="#"><?=$cat->nombre?></a>
-            </li>
+            <?php while ($cat = $categorias->fetch_object()): ?>
+                <li>
+                    <a href="<?= BASE_URL ?>./categoria/ver&id_categoria=<?= $cat->id_categoria ?>"
+                       class="<?php if (isset($_GET['id_categoria']) && $_GET['id_categoria'] == $cat->id_categoria): ?>border-b-2 <?php endif; ?>border-gray-200"><?= $cat->nombre ?></a>
+                </li>
             <?php endwhile; ?>
         </ul>
     </div>

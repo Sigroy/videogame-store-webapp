@@ -3,7 +3,7 @@
 <a href="<?=BASE_URL?>/categoria/crear" class="mx-5 px-4 border relative bg-indigo-600 py-2 hover:bg-indigo-700 text-white rounded-md w-full self-center cursor-pointer hover:bg-blue-800">Crear categorías</a>
 
 <div class="w-full mt-5 flex justify-center items-center">
-<table class="table-fixed border-2 w-full text-center">
+<table class="table-fixed border-2 w-full text-center mx-5">
     <tr>
         <th class="border-r-2 border-b-4">
             ID

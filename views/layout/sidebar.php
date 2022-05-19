@@ -1,6 +1,6 @@
-<div class="grid grid-cols-5 h-[88%]">
+<div class="grid grid-cols-5 h-full">
     <!-- BARRA LATERAL -->
-    <aside class="flex flex-col px-10 border-r">
+    <aside class="flex flex-col px-10">
         <?php if (!isset($_SESSION['identidad'])): ?>
             <h2 class="mt-6 text-center text-2xl font-bold text-gray-900">Iniciar sesión</h2>
             <form action="<?= BASE_URL ?>/usuario/login" method="post"
@@ -53,7 +53,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
                     </svg>
-                    <a href="" class="text-blue-900 font-semibold hover:border-b hover:border-b-gray-700"><span>Gestionar
+                    <a href="<?=BASE_URL?>/producto/gestion" class="text-blue-900 font-semibold hover:border-b hover:border-b-gray-700"><span>Gestionar
                     productos</span></a>
                 </li>
                 <li>
@@ -63,7 +63,7 @@
                               d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
                     </svg>
                     <a href="" class="text-blue-900 font-semibold hover:border-b hover:border-b-gray-700"><span>Gestionar
-                    productos</span></a>
+                    pedidos</span></a>
                 </li>
             <?php endif; ?>
 
@@ -90,4 +90,4 @@
         </ul>
     </aside>
     <!-- CONTENIDO PRINCIPAL -->
-    <main class="col-span-4">
+    <main class="col-span-4 mb-5 border-l-2">
