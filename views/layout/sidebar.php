@@ -1,6 +1,15 @@
 <div class="grid grid-cols-5 h-full">
     <!-- BARRA LATERAL -->
     <aside class="flex flex-col px-10">
+        <h2 class="mt-6 text-center text-2xl font-bold text-gray-900">Mi carrito</h2>
+        <ul>
+            <?php $estadisticas = Utils::estadisticasCarrito() ?>
+            <li><a href="<?= BASE_URL ?>/carrito/index">Productos (<?= $estadisticas['contador'] ?>)</a></li>
+            <li><a href="<?= BASE_URL ?>/carrito/index">Total: $<?= $estadisticas['total'] ?></a></li>
+            <li><a href="<?= BASE_URL ?>/carrito/index"
+                   class="text-blue-900 font-semibold hover:border-b hover:border-b-gray-700">Ver carrito</a></li>
+        </ul>
+
         <?php if (!isset($_SESSION['identidad'])): ?>
             <h2 class="mt-6 text-center text-2xl font-bold text-gray-900">Iniciar sesión</h2>
             <form action="<?= BASE_URL ?>/usuario/login" method="post"
@@ -31,7 +40,8 @@
                     contraseña? </a>
             </div>
             <div class="text-sm mt-2 self-center">
-                <a href="<?=BASE_URL?>/usuario/registro" class="font-medium text-indigo-600 hover:text-indigo-300"> Crear una cuenta </a>
+                <a href="<?= BASE_URL ?>/usuario/registro"
+                   class="font-medium text-indigo-600 hover:text-indigo-300"> Crear una cuenta </a>
             </div>
         <?php else: ?>
             <h2 class="text-center mt-5 font-bold inline-block text-2xl"><?= $_SESSION['identidad']->nombre ?> <?= $_SESSION['identidad']->apellidos ?></h2>
@@ -39,37 +49,44 @@
         <ul class="mt-5">
             <?php if (isset($_SESSION['admin'])): ?>
                 <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 inline-block" fill="none" viewBox="0 0 24 24"
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 inline-block" fill="none"
+                         viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
                     </svg>
-                    <a href="<?=BASE_URL?>/categoria/index" class="text-blue-900 font-semibold hover:border-b hover:border-b-gray-700"><span>Gestionar
+                    <a href="<?= BASE_URL ?>/categoria/index"
+                       class="text-blue-900 font-semibold hover:border-b hover:border-b-gray-700"><span>Gestionar
                     categorías</span></a>
                 </li>
                 <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 inline-block" fill="none" viewBox="0 0 24 24"
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 inline-block" fill="none"
+                         viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
                     </svg>
-                    <a href="<?=BASE_URL?>/producto/gestion" class="text-blue-900 font-semibold hover:border-b hover:border-b-gray-700"><span>Gestionar
+                    <a href="<?= BASE_URL ?>/producto/gestion"
+                       class="text-blue-900 font-semibold hover:border-b hover:border-b-gray-700"><span>Gestionar
                     productos</span></a>
                 </li>
                 <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 inline-block" fill="none" viewBox="0 0 24 24"
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 inline-block" fill="none"
+                         viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
                     </svg>
-                    <a href="" class="text-blue-900 font-semibold hover:border-b hover:border-b-gray-700"><span>Gestionar
+                    <a href=""
+                       class="text-blue-900 font-semibold hover:border-b hover:border-b-gray-700"><span>Gestionar
                     pedidos</span></a>
                 </li>
             <?php endif; ?>
 
             <?php if (isset($_SESSION['identidad'])): ?>
                 <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 inline-block" fill="none" viewBox="0 0 24 24"
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 inline-block" fill="none"
+                         viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
@@ -78,7 +95,8 @@
                         <span>Mis pedidos</span></a>
                 </li>
                 <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 inline-block" fill="none" viewBox="0 0 24 24"
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 inline-block" fill="none"
+                         viewBox="0 0 24 24"
                          stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>

@@ -8,7 +8,7 @@
                 <h2 class="font-bold mt-2 text-center"><?= $producto->nombre ?></h2>
             </a>
             <p class="font-semibold text-blue-900">$<?= $producto->precio ?></p>
-            <a href=""
+            <a href="<?= BASE_URL ?>/carrito/agregar&id_producto=<?= $producto->id_producto ?>"
                class="border bg-blue-700 text-center text-white rounded-md w-24 self-center cursor-pointer hover:bg-blue-800">Comprar</a>
         </div>
     <?php endwhile; ?>

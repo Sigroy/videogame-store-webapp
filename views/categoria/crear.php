@@ -1,4 +1,4 @@
-<h1>Crear nueva categoría</h1>
+<h1 class="text-center mt-10 font-bold text-2xl uppercase">Crear nueva categoría</h1>
 
 <form action="<?=BASE_URL?>/categoria/guardar" method="post">
     <label for="nombre">Nombre:</label>

@@ -22,7 +22,7 @@
             </li>
             <?php while ($cat = $categorias->fetch_object()): ?>
                 <li>
-                    <a href="<?= BASE_URL ?>./categoria/ver&id_categoria=<?= $cat->id_categoria ?>"
+                    <a href="<?= BASE_URL ?>/categoria/ver&id_categoria=<?= $cat->id_categoria ?>"
                        class="<?php if (isset($_GET['id_categoria']) && $_GET['id_categoria'] == $cat->id_categoria): ?>border-b-2 <?php endif; ?>border-gray-200"><?= $cat->nombre ?></a>
                 </li>
             <?php endwhile; ?>
