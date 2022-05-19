@@ -49,7 +49,14 @@ class Categoria
         return $categorias;
     }
 
-    public function guardar()
+    public function getOne()
+    {
+        $categorias = $this->db->query("SELECT * FROM categoria WHERE id_categoria = {$this->getIdCategoria()};");
+        return $categorias->fetch_object();
+    }
+
+    public
+    function guardar()
     {
         $sql = "INSERT INTO categoria VALUES(NULL, '{$this->getNombre()}')";
         $registro = $this->db->query($sql);
