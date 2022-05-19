@@ -21,10 +21,28 @@ class Utils
         }
     }
 
-    public static function mostrarCategorias() {
+    public static function mostrarCategorias()
+    {
         require_once 'models/Categoria.php';
         $categoria = new Categoria();
         $categorias = $categoria->getAll();
         return $categorias;
+    }
+
+    public static function estadisticasCarrito()
+    {
+        $estadisticas = array(
+            'contador' => 0,
+            'total' => 0
+        );
+        if (isset($_SESSION['carrito'])) {
+            $estadisticas['contador'] = count($_SESSION['carrito']);
+
+            foreach ($_SESSION['carrito'] as $producto) {
+                $estadisticas['total'] += $producto['precio'] * $producto['unidades'];
+            }
+        }
+
+        return $estadisticas;
     }
 }
